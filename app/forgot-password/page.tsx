@@ -1,56 +1,39 @@
 import Link from "next/link";
-import signUp from "../auth/signup/sign-up";
 
 const page = () => {
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="w-full max-w-xs">
-                <form
-                    action={signUp}
-                    className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 min-h-[500px]"
-                >
-                    <div className="mb-4">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="username"
-                        >
-                            Username
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="username"
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="password"
-                        >
-                            Password
-                        </label>
-                        <input
-                            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password"
-                            type="password"
-                            name="password"
-                            placeholder="******************"
-                        />
-                        <p className="text-red-500 text-xs italic">
-                            Please choose a password.
-                        </p>
-                    </div>
-                    <div className="flex items-center justify-center">
-                        <Link className="text-sm text-black" href="/auth/login">
-                            Back to Login
-                        </Link>
-                    </div>
-                </form>
-                <p className="text-center text-gray-500 text-xs">
-                    &copy;2020 Acme Corp. All rights reserved.
+        <div className=" flex justify-center items-center w-full h-screen bg-gradient-to-tr from-[#61d7dd] to-[#df39f5]">
+            <div className=" flex flex-col justify-center min-w-80 md:max-w-96 md:h-fit h-screen bg-white md:rounded-xl px-8 pt-10 pb-4 ">
+                <h4 className="text-4xl font-extrabold text-center ">
+                    Forgot Password
+                </h4>
+                <p className="mt-9 text-sm text-start mb-8">
+                    Enter the email address associated with your account and
+                    we&apos;ll send you a link to reset your password.
                 </p>
+                <label htmlFor="username" className="w-full inline-block mb-1">
+                    Email
+                </label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Enter your email"
+                    className="w-full border mb-2 px-4 py-2"
+                />
+
+                <button className="rounded-full bg-gradient-to-r from-[#61d7dd] to-[#df39f5] w-full py-2 text-sm text-white font-medium">
+                    Continue
+                </button>
+                <div className="flex justify-center mt-20">
+                    <p className="text-sm">Don&apos;t have an account?</p>
+                    <Link
+                        href={"/auth/signup"}
+                        className="text-sm hover:underline"
+                    >
+                        Sign up
+                    </Link>
+                </div>
             </div>
         </div>
     );

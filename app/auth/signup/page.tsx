@@ -1,65 +1,70 @@
 import Link from "next/link";
-import signUp from "./sign-up";
+import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 const page = () => {
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="w-full max-w-xs">
-                <form
-                    action={signUp}
-                    className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 min-h-[500px]"
-                >
-                    <div className="mb-4">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="username"
-                        >
-                            Username
-                        </label>
-                        <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            id="username"
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                        />
-                    </div>
-                    <div className="mb-6">
-                        <label
-                            className="block text-gray-700 text-sm font-bold mb-2"
-                            htmlFor="password"
-                        >
-                            Password
-                        </label>
-                        <input
-                            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                            id="password"
-                            type="password"
-                            name="password"
-                            placeholder="******************"
-                        />
-                        <p className="text-red-500 text-xs italic">
-                            Please choose a password.
-                        </p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="submit"
-                        >
-                            Sign In
-                        </button>
-                        <Link
-                            className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                            href="/forgot-password"
-                        >
-                            Forgot Password?
-                        </Link>
-                    </div>
-                </form>
-                <p className="text-center text-gray-500 text-xs">
-                    &copy;2020 Acme Corp. All rights reserved.
-                </p>
+        <div className=" w-full h-screen bg-gradient-to-tr from-[#61d7dd] to-[#df39f5] flex justify-center items-center">
+            <div className="flex flex-col justify-center w-full md:max-w-96 h-screen md:h-fit bg-white pb-5 pt-14 px-8 md:rounded-lg">
+                <h4 className="text-black text-4xl font-extrabold text-center mb-9">
+                    Sign Up
+                </h4>
+                <label htmlFor="name" className="mb-1 inline-block">
+                    Name
+                </label>
+                <input
+                    type="text"
+                    className="border w-full p-2 mb-1 "
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                />
+                <label htmlFor="username" className="mb-1 inline-block">
+                    Username
+                </label>
+                <input
+                    type="text"
+                    className="border w-full p-2 mb-1"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your email"
+                />
+                <label htmlFor="password" className="mb-1 inline-block">
+                    Password
+                </label>
+                <input
+                    type="password"
+                    className="border w-full p-2 mb-1"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                />
+
+                <button className="text-white py-2 w-full border rounded-full bg-gradient-to-r from-[#61d7dd] to-[#df39f5] mt-8 mb-3">
+                    Sign Up
+                </button>
+                <p className="text-center text-sm mb-6">Or Sign up Using</p>
+
+                <div className="flex justify-center gap-3">
+                    <button className="bg-[#4267B2] w-8 h-8 flex justify-center items-center rounded-full">
+                        <FaFacebookF className="text-white" />
+                    </button>
+                    <button className="bg-[#1da1f2] w-8 h-8 rounded-full flex justify-center items-center">
+                        <FaTwitter className="text-white" />
+                    </button>
+                    <button className="bg-[#FF3D00] w-8 h-8 rounded-full flex justify-center items-center">
+                        <FaGoogle className="text-white" />
+                    </button>
+                </div>
+                <p className="text-center text-sm mt-16">Or Sign up Using</p>
+
+                <div className="flex justify-center ">
+                    <Link
+                        href={"/auth/login"}
+                        className="hover:underline text-sm"
+                    >
+                        Login
+                    </Link>
+                </div>
             </div>
         </div>
     );
