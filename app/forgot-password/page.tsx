@@ -1,3 +1,4 @@
+import Input from "@/components/ui/input";
 import Link from "next/link";
 
 const page = () => {
@@ -11,18 +12,15 @@ const page = () => {
                     Enter the email address associated with your account and
                     we&apos;ll send you a link to reset your password.
                 </p>
-                <label htmlFor="username" className="w-full inline-block mb-1">
-                    Email
-                </label>
-                <input
-                    type="text"
-                    name="username"
-                    id="username"
-                    placeholder="Enter your email"
-                    className="w-full border mb-2 px-4 py-2"
+
+                <Input
+                    label="email"
+                    type="email"
+                    name="name"
+                    placeholder="type your email"
                 />
 
-                <button className="rounded-full bg-gradient-to-r from-[#61d7dd] to-[#df39f5] w-full py-2 text-sm text-white font-medium">
+                <button className=" mt-8 rounded-full bg-gradient-to-r from-[#61d7dd] to-[#df39f5] w-full py-2 text-sm text-white font-medium">
                     Continue
                 </button>
                 <div className="flex justify-center mt-20">
